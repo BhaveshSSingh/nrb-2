@@ -1,10 +1,12 @@
 import { BiCodeCurly } from "react-icons/bi";
+import { teamName } from "../constants";
 
 function Header() {
   return (
-    <div className="flex justify-between bg-purple-600 p-4">
+    <div className="flex justify-between bg-blue-600 p-4 items-center">
       <div className="text-white flex items-center">
-        <BiCodeCurly size={40} /> <h1 className="=">EcmaScripters</h1>
+        <BiCodeCurly size={40} />
+        <h1 className="underline font-bold">{teamName}</h1>
       </div>
     </div>
   );

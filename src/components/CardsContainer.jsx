@@ -1,10 +1,9 @@
 import Card from "./Card";
-import data from "../data.json";
 
-const CardsContainer = () => {
+const CardsContainer = ({ filteredName }) => {
   return (
-    <div className="flex flex-wrap w-fit bg-pink-200 p-4">
-      {data.map((member) => (
+    <div className="flex flex-wrap w-fit bg-blue-50 justify-center p-4 m-2">
+      {filteredName.map((member) => (
         <Card member={member} key={member.name} />
       ))}
     </div>
