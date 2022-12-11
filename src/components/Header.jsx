@@ -1,5 +1,5 @@
 import { BiCodeCurly } from "react-icons/bi";
-import { teamName } from "../constants";
+import { teamName } from "../utils/constants";
 
 function Header() {
   return (

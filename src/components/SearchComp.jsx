@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { FcSearch } from "react-icons/fc";
-import data from "../data.json";
+import data from "../utils/data.json";
 
 const SearchComp = ({ filteredName }) => {
   const [searchMember, setSearchMember] = useState("");
 
   const searchMembersByName = (searchMember) => {
     return data.filter((res) =>
-      res.name.toLocaleLowerCase().includes(searchMember.toLocaleLowerCase())
+      res.userName
+        .toLocaleLowerCase()
+        .includes(searchMember.toLocaleLowerCase())
     );
   };
 
@@ -18,7 +20,7 @@ const SearchComp = ({ filteredName }) => {
   };
 
   return (
-    <div className="">
+    <div className=" bg-blue-50 flex justify-center">
       <div className="w-[230px] bg-blue-50 m-1 mt-5 rounded-md  p-1">
         <form className="flex items-center" onSubmit={formSubmitHandler}>
           <input
