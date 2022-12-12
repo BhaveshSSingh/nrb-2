@@ -16,7 +16,7 @@ const SearchComp = ({ filteredName }) => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     const resList = searchMembersByName(searchMember);
-    filteredName(resList); //for changing the cards
+    filteredName(resList); 
   };
 
   return (

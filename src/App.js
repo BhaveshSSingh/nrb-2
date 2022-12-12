@@ -1,29 +1,46 @@
-import data from "./utils/data.json";
-import { useState } from "react";
-import CardsContainer from "./components/CardsContainer";
+import { createBrowserRouter, Outlet } from "react-router-dom";
+
 import Header from "./components/Header";
-import SearchComp from "./components/SearchComp";
-import { useEffect } from "react";
-import { getMemberInfo } from "./api/GithubApi";
+
+import BodyComp from "./components/BodyComp";
+import ErrorComp from "./components/ErrorComp";
+import AboutComp from "./components/AboutComp";
+import MemberPage from "./components/MemberPage";
 
 function App() {
-  const [filteredName, setFilteredName] = useState(data);
-
-  useEffect(() => {
-    getApiInfo();
-  }, []);
-
-  const getApiInfo = async () => {
-    const users = await getMemberInfo();
-    setFilteredName(users);
-  };
   return (
     <>
       <Header />
-      <SearchComp filteredName={setFilteredName} />
-      <CardsContainer filteredName={filteredName} />
+      <Outlet />
+      {/* <Footer/> */}
     </>
   );
 }
 
 export default App;
+
+export const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorComp />,
+    children: [
+      {
+        path: "home",
+        element: <BodyComp />,
+      },
+      {
+        path: "about-us",
+        element: <AboutComp />,
+      },
+      {
+        path: "member/:id",
+        element: <MemberPage />,
+      },
+    ],
+  },
+  {
+    path: "/error",
+    element: <AboutComp />,
+  },
+]);
