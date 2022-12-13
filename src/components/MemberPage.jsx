@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const MemberPage = ({ member }) => {
   const { id } = useParams();
@@ -25,7 +25,7 @@ const MemberPage = ({ member }) => {
             Name: {profileData.name} Github-id: {profileData.userName}
           </h2>
           <h3 className="">
-            <a href={profileData.blog}>Website</a>
+            <Link to={profileData.blog}>Website</Link>
           </h3>
           <p>About: {profileData.bio}</p>
           <h4 className=""> Location: {profileData.location}</h4>

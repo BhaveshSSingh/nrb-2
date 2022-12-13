@@ -11,7 +11,7 @@ const Card = ({ member }) => {
             Name: {member.name} Github-ID: {member.userName}
           </h2>
           <h3>
-            <a href={member.blog}>Website</a>{" "}
+            <Link to={member.blog}>Website</Link>{" "}
           </h3>
           <p>About: {member.bio}</p>
           <h4 className=""> Location: {member.location}</h4>

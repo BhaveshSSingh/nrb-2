@@ -1,7 +1,6 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
 
 import Header from "./components/Header";
-
 import BodyComp from "./components/BodyComp";
 import ErrorComp from "./components/ErrorComp";
 import AboutComp from "./components/AboutComp";
@@ -38,9 +37,5 @@ export const appRouter = createBrowserRouter([
         element: <MemberPage />,
       },
     ],
-  },
-  {
-    path: "/error",
-    element: <AboutComp />,
   },
 ]);
