@@ -5,6 +5,7 @@ import BodyComp from "./components/BodyComp";
 import ErrorComp from "./components/ErrorComp";
 import AboutComp from "./components/AboutComp";
 import MemberPage from "./components/MemberPage";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -31,6 +32,12 @@ export const appRouter = createBrowserRouter([
       {
         path: "about-us",
         element: <AboutComp />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile name={"Bhavesh Singh"} />,
+          },
+        ],
       },
       {
         path: "member/:id",

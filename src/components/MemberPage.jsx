@@ -15,7 +15,7 @@ const MemberPage = ({ member }) => {
     console.log(json);
     setProfileData(json);
   };
-
+  console.log(profileData);
   return (
     <div>
       <div className="m-2">

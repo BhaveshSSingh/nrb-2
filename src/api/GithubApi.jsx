@@ -2,7 +2,10 @@ import data from "../utils/data.json";
 
 export const getMemberInfo = async () =>
   Promise.all(
-    data.map(async (userName) => {
-      return (await fetch(`https://api.github.com/users/BhaveshSSingh`)).json();
+    data.map(async (name) => {
+      const memData = await fetch(`https://api.github.com/users/gavandivya`);
+      const memJson = memData.json();
+      console.log(memJson);
+      console.log(name);
     })
   );
