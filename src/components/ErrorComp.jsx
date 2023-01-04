@@ -2,13 +2,13 @@ import { useRouteError } from "react-router-dom";
 import Header from "./Header";
 
 const ErrorComp = () => {
-  const errorData = useRouteError();
+  const error = useRouteError();
   return (
     <>
       <Header />
       <div>
         Something !very Kool happened
-        <h1>Details: {errorData.statusText || errorData.message} </h1>
+        <h1>Details: {error.statusText || error.message} </h1>
       </div>
     </>
   );

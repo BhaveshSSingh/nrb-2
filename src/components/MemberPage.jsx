@@ -12,10 +12,10 @@ const MemberPage = ({ member }) => {
   const fetchMemberProfile = async () => {
     const data = await fetch(`https://api.github.com/users/${id}`);
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
     setProfileData(json);
   };
-  console.log(profileData);
+  // console.log(profileData);
   return (
     <div>
       <div className="m-2">

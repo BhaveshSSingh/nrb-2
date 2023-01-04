@@ -6,20 +6,25 @@ import ErrorComp from "./components/ErrorComp";
 import AboutComp from "./components/AboutComp";
 import MemberPage from "./components/MemberPage";
 import Profile from "./components/Profile";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 function App() {
   return (
     <>
+      {/* <Provider store={store}> */}
       <Header />
       <Outlet />
       {/* <Footer/> */}
+      {/* </Provider> */}
     </>
   );
 }
 
 export default App;
 
-export const appRouter = createBrowserRouter([
+//
+const router = [
   {
     path: "/",
     element: <App />,
@@ -45,4 +50,8 @@ export const appRouter = createBrowserRouter([
       },
     ],
   },
-]);
+];
+
+const routesConfig = router;
+
+export const appRouter = createBrowserRouter(routesConfig);

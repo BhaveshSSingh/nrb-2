@@ -8,15 +8,15 @@ class Profile extends React.Component {
       email: "bhaveshsingh@abc.com",
       phone: "9876543210",
     };
-    console.log("Profile -constructer");
+    // console.log("Profile -constructer");
   }
 
   componentDidMount() {
-    console.log("Profile - componentDidMount");
+    // console.log("Profile - componentDidMount");
   }
 
   render() {
-    console.log("Profile - Render");
+    // console.log("Profile - Render");
     return (
       <>
         <div>Name: {this.props.name}</div>

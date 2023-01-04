@@ -4,13 +4,9 @@ import { Outlet } from "react-router-dom";
 class AboutComp extends React.Component {
   constructor(props) {
     super(props);
-    console.log("About -Constructor");
   }
-  componentDidMount() {
-    console.log("About - componentDidMount");
-  }
+
   render() {
-    console.log("About Render");
     return (
       <div>
         AboutComp

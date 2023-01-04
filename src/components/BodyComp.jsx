@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getMemberInfo } from "../api/GithubApi";
 import CardsContainer from "./CardsContainer";
 import SearchComp from "./SearchComp";
@@ -19,7 +19,7 @@ const BodyComp = () => {
   return (
     <div>
       <SearchComp filteredName={setFilteredName} />
-      <CardsContainer filteredName={listOfMembers} />
+      <CardsContainer filteredName={setListOfMembers} />
     </div>
   );
 };
