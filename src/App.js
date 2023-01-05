@@ -6,17 +6,21 @@ import ErrorComp from "./components/ErrorComp";
 import AboutComp from "./components/AboutComp";
 import MemberPage from "./components/MemberPage";
 import Profile from "./components/Profile";
-import { Provider } from "react-redux";
-import store from "./store/store";
+
+import Login from "./components/Login";
+import { useSelector } from "react-redux";
+import { selectUser } from "./app/userSlice";
+import Logout from "./components/Logout";
 
 function App() {
+  const user = useSelector(selectUser);
+
   return (
     <>
-      {/* <Provider store={store}> */}
-      <Header />
-      <Outlet />
+      {user ? <Logout /> : <Login />}
+      {/* <Header />
+      <Outlet /> */}
       {/* <Footer/> */}
-      {/* </Provider> */}
     </>
   );
 }
